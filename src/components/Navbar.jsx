@@ -19,14 +19,14 @@ import { motion } from "framer-motion";
 //local stroge
 
 const themeFromLocalStorge = () => {
-  return localStorage.getItem("theme") || "pastel";
+  return localStorage.getItem("theme") || "winter";
 };
 
 function Navbar() {
   const [theme, setTheme] = useState(themeFromLocalStorge());
 
   const toggleTheme = () => {
-    const newTheme = theme == "pastel" ? "night " : "pastel";
+    const newTheme = theme == "winter" ? "dracula" : "winter";
     setTheme(newTheme);
   };
 
@@ -67,6 +67,17 @@ function Navbar() {
             <NavLinks />
           </ul>
 
+          <label className="swap swap-rotate ">
+            {/* this hidden checkbox controls the state */}
+            <input type="checkbox" onClick={toggleTheme} />
+
+            {/* sun icon */}
+            <FiSun className="swap-on h-6 w-6 fill-current" />
+
+            {/* moon icon */}
+            <PiMoon className="swap-off h-6 w-6 fill-current" />
+          </label>
+
           <div className="dropdown dropdown-left sm:hidden">
             <div tabIndex={0} role="button">
               <HiBars3 className="w-7 h-7" />
@@ -79,17 +90,6 @@ function Navbar() {
               <NavLinks />
             </ul>
           </div>
-
-          <label className="swap swap-rotate">
-            {/* this hidden checkbox controls the state */}
-            <input type="checkbox" onClick={toggleTheme} />
-
-            {/* sun icon */}
-            <FiSun className="swap-on h-6 w-6 fill-current" />
-
-            {/* moon icon */}
-            <PiMoon className="swap-off h-6 w-6 fill-current" />
-          </label>
         </motion.div>
       </div>
     </header>

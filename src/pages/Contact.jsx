@@ -45,7 +45,7 @@ function Contact() {
       <motion.div
         initial={{ x: "-100vw" }}
         animate={{ x: 0 }}
-        transition={{ type: "spring", delay: 1, duration: 2 }}
+        transition={{ type: "spring", delay: 0.5, duration: 4 }}
         className="mb-14 md:mb-0 lg:mb-0"
       >
         <p className="text-3xl font-bold mb-2 font-mono">Contact</p>
@@ -61,7 +61,7 @@ function Contact() {
       <motion.div
         initial={{ x: "100vw" }}
         animate={{ x: 0 }}
-        transition={{ type: "spring", delay: 1, duration: 2 }}
+        transition={{ type: "spring", delay: 0.5, duration: 4 }}
       >
         <form
           ref={form}
